@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Déclaration du type de document et du langage utilisé -->
+    <meta charset="UTF-8">
+    <!-- Configuration de la vue pour les appareils mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre de la page visible dans l'onglet du navigateur -->
+    <title>To Do List</title>
+    <!-- Lien vers le fichier CSS externe pour le style de la page -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Conteneur principal de l'application -->
+        <div class="container">
+            <!-- Application de liste de tâches -->
+            <div class="todo-app">
+                <!-- Titre de l'application avec une icône -->
+                <h2>Liste de Tâches Interactive <img src="icon.png"></h2>
+
+                <!-- Zone de saisie et bouton pour ajouter une tâche -->
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="Ajouter votre texte">
+                    <input type="date" id="due-date" placeholder="Date d'échéance">
+                
+                    <select id="status" placeholder="status">
+                        <option value="À faire">À faire</option>
+                        <option value="En cours">En cours</option>
+                    </select>
+                    <select id="priority" placeholder="priorté">
+                        <option value="Basse">Basse</option>
+                        <option value="Moyenne">Moyenne</option>
+                        <option value="Haute">Haute</option>
+                    </select>
+                    <!-- <button onclick="addTask()">Ajouter</button> -->
+                    <button id="addBtn"><span>Ajouter</span></button>
+
+                </div>            
+                <!-- Liste des tâches -->
+                <ul id="list-container"></ul>
+            </div>
+        </div>
+    <!-- Lien vers le fichier JavaScript externe pour la logique de l'application -->
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,275 @@
+/* Réinitialisation des marges, des paddings, de la police et de la boîte de modèle pour tous les éléments */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Style du conteneur principal de l'application */
+.container {
+    width: 100%;
+    min-height: 100vh; /* Hauteur minimale de la vue */
+    /* background: linear-gradient(135deg, #153677, #4e085f);  */
+    /* background-image: url("BG.png");    
+    background-size: cover; */
+    background-image: radial-gradient(circle at 19% 90%, rgba(190, 190, 190,0.04) 0%, rgba(190, 190, 190,0.04) 17%,transparent 17%, transparent 100%),radial-gradient(circle at 73% 2%, rgba(78, 78, 78,0.04) 0%, rgba(78, 78, 78,0.04) 94%,transparent 94%, transparent 100%),radial-gradient(circle at 45% 2%, rgba(18, 18, 18,0.04) 0%, rgba(18, 18, 18,0.04) 55%,transparent 55%, transparent 100%),radial-gradient(circle at 76% 60%, rgba(110, 110, 110,0.04) 0%, rgba(110, 110, 110,0.04) 34%,transparent 34%, transparent 100%),radial-gradient(circle at 68% 56%, rgba(246, 246, 246,0.04) 0%, rgba(246, 246, 246,0.04) 16%,transparent 16%, transparent 100%),radial-gradient(circle at 71% 42%, rgba(156, 156, 156,0.04) 0%, rgba(156, 156, 156,0.04) 47%,transparent 47%, transparent 100%),radial-gradient(circle at 46% 82%, rgba(247, 247, 247,0.04) 0%, rgba(247, 247, 247,0.04) 39%,transparent 39%, transparent 100%),radial-gradient(circle at 50% 47%, rgba(209, 209, 209,0.04) 0%, rgba(209, 209, 209,0.04) 45%,transparent 45%, transparent 100%),linear-gradient(90deg, rgb(84, 36, 210),rgb(44, 27, 154));
+    padding: 10px; /* Espacement interne */
+}
+
+/* Style de l'application de liste de tâches */
+.todo-app {
+   
+    width: 100%;
+    max-width: 940px; /* Largeur maximale */
+    /* background: #00308F;  */
+    background-image: repeating-radial-gradient(circle at center center, transparent 0px, transparent 2px,rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 5px,transparent 5px, transparent 9px,rgba(0,0,0,0.04) 9px, rgba(0,0,0,0.04) 12px),repeating-radial-gradient(circle at center center, rgb(255,255,255) 0px, rgb(255,255,255) 4px,rgb(255,255,255) 4px, rgb(255,255,255) 14px,rgb(255,255,255) 14px, rgb(255,255,255) 27px,rgb(255,255,255) 27px, rgb(255,255,255) 30px); background-size: 62px 62px;
+    margin: 100px auto 30px; /* Marges auto pour centrer, marge supérieure de 100px */
+    padding: 50px 40px 80px; /* Espacement interne */
+    border-radius: 20px; /* Coins arrondis */
+    border: 3px solid #000; /* Ajout d'une bordure pour l'animation */
+    animation: blink 1s infinite; /* Application de l'animation */
+
+}
+
+/* Définition de la clé de l'animation */
+@keyframes blink {
+    35% { border-color: #1c61e0; } /* Couleur de la bordure au début */
+    65% { border-color: #fff; } /* Couleur de la bordure au milieu */
+    100% { border-color: #1b70df; } /* Couleur de la bordure à la fin */
+}
+
+/* @keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+} */
+
+/* @keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+} */
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Style du titre de l'application */
+.todo-app h2 {
+    font-size: 200%;
+    color: #002765;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    animation: fadeInText 0.5s ease-out forwards;
+    /* animation: heartbeat 1s ease-in-out infinite;  */
+    /* animation: pulse 1s ease-in-out infinite; */
+
+}
+
+/* Style de l'icône dans le titre */
+.todo-app h2 img {
+    width: 40px; /* Largeur de l'icône */
+    margin-left: 10px; /* Marge à gauche */
+}
+
+.todo-app h2 img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+
+/* Style de la zone de saisie et du bouton */
+.row {
+    display: flex; /* Affichage en ligne */
+    align-items: center; /* Alignement vertical */
+    justify-content: space-between; /* Espacement entre les éléments */
+    background: #edeef0; /* Fond gris clair */
+    border-radius: 30px; /* Coins arrondis */
+    padding-left: 20px; /* Espacement à gauche */
+    margin-bottom: 25px; /* Marge inférieure */
+    gap: 10px;
+
+}
+
+/* Style du champ de saisie et des champs de sélection */
+input[type="text"],
+input[type="date"],
+select {
+    flex: 1; 
+    border: none; 
+    outline: none; 
+    background: transparent; 
+    padding: 10px; 
+    font-size: 16px; 
+    justify-content: space-around;
+}
+
+/* Style du bouton */
+button {
+    border: none; /* Pas de bordure */
+    outline: none; /* Pas de contour */
+    padding: 16px 50px; /* Espacement interne */
+    background: #ff5945; /* Fond rouge */
+    color: #fff; /* Texte blanc */
+    font-size: 16px; /* Taille de la police */
+    /* cursor: pointer; Curseur en forme de main */
+    border-radius: 40px; /* Coins arrondis */
+}
+
+/* Style des éléments de la liste */
+ul li {
+  
+    display: flex; /* Affichage en ligne */
+    align-items: center; /* Alignement vertical */
+    justify-content: space-between; /* Espacement entre les éléments */
+    background: #edeef0; /* Fond gris clair */
+    border-radius: 30px; /* Coins arrondis */
+    padding-left: 20px; /* Espacement à gauche */
+    margin-bottom: 25px; /* Marge inférieure */
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Style de l'icône de tâche cochée */
+ul li.checked::before {
+    content: url(checked.png); /* Image de fond différente */
+    margin-right: 10px; /* Marge à droite de l'icône */
+}
+
+.deleteBtn {
+    border: none; /* Pas de bordure */
+    outline: none; /* Pas de contour */
+    padding: 16px 50px; /* Espacement interne */
+    background: #ff5945; /* Fond rouge */
+    color: #fff; /* Texte blanc */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Curseur en forme de main */
+    border-radius: 40px; /* Coins arrondis */
+}
+
+/* Style du bouton de suppression au survol */
+ul li button:hover {
+    background: #002765; /* Fond gris clair */
+}
+
+ul li:hover {
+    background: #e0e0e0; /* Fond gris clair lors du survol */
+    transition: background 0.3s ease;
+}
+
+
+.completed {
+    color :#ccc;
+    text-decoration: line-through;
+}
+/* Pour des tailles d'écran jusqu'à 600px */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 5px;
+    }
+
+    .todo-app {
+        padding: 20px;
+    }
+
+    .todo-app h2 {
+        font-size: 150%;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.todo-item {
+    animation: fadeOut 0.5s ease-out;
+}
+
+
+
+
+.todo-item {
+    animation: fadeIn 0.5s ease-out;
+}
+
+
+/* Pour des tailles d'écran jusqu'à 400px */
+@media screen and (max-width: 400px) {
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    ul li {
+        padding: 10px;
+    }
+
+    ul li button {
+        padding: 12px 40px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    ul li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    ul li button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
